@@ -1,4 +1,4 @@
-import { cart , localstorage } from '../data/cart.js';
+import { cart , localstorage, } from '../data/cart.js';
 import {products} from '../data/products.js';
 
 
@@ -74,7 +74,8 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
         }else{
             cart.push({
                 productid:productid,
-                quantity:1
+                quantity:1,
+                deliveryoptionid: '1'
             });
         
         }
