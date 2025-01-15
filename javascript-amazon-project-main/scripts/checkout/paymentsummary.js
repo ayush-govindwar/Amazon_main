@@ -2,7 +2,7 @@
 import {cart, removecart,updatedeliveryoption} from '../../data/cart.js'
 import {products} from '../../data/products.js';
 import {deliveryoptions} from '../../data/deliveryoptions.js'
-function render(){
+export function render(){
     function renderpaymentsummary(){
         //totalpayment
         let matchingproduct;

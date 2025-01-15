@@ -2,6 +2,7 @@ import {cart, removecart,updatedeliveryoption} from '../../data/cart.js'
 import {products} from '../../data/products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryoptions} from '../../data/deliveryoptions.js';
+import {render} from '../../scripts/checkout/paymentsummary.js';
 
 const today=dayjs();
 function renderordersummary(){
@@ -111,8 +112,12 @@ function renderordersummary(){
         link.addEventListener('click',()=>{
             let product_id= link.dataset.productId;
             removecart(product_id);
+            render();
+            
             const cont = document.querySelector(`.js-cart-item-container-${product_id}`);
             cont.remove();
+            
+            
             })
             
             
