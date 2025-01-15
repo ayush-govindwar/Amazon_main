@@ -1,4 +1,4 @@
-import { cart } from '../data/cart.js';
+import { cart , localstorage } from '../data/cart.js';
 import {products} from '../data/products.js';
 
 
@@ -64,7 +64,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
         const productid= button.dataset.productId;
         let matchingitem;
         cart.forEach((item)=>{
-            if(productid==item.productId){
+            if(productid==item.productid){
                 matchingitem=item;
             }
         })
@@ -76,7 +76,9 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>{
                 productid:productid,
                 quantity:1
             });
+        
         }
+        localstorage(cart);
         let cartquantity=0;
         cart.forEach((item)=>{
             cartquantity+=item.quantity;
