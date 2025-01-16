@@ -1,7 +1,9 @@
 
 import {cart, removecart,updatedeliveryoption} from '../../data/cart.js'
 import {products} from '../../data/products.js';
-import {deliveryoptions} from '../../data/deliveryoptions.js'
+import {deliveryoptions} from '../../data/deliveryoptions.js';
+
+
 export function render(){
     function renderpaymentsummary(){
         //totalpayment
@@ -103,7 +105,7 @@ export function render(){
     renderpaymentsummary();
     document.querySelectorAll('.js-delivery-option').forEach((element)=>{
         element.addEventListener('click',()=>{
-            const productid1=element.dataset.productId2;
+            
             const deliveryoptionid=element.dataset.deliveryOptionId;
             updatetotalshipping(deliveryoptionid);
             render();
@@ -113,8 +115,9 @@ export function render(){
             
             
         });
+        
     });
 
-    console.log(cart);
-}
+ 
+};
 render();
