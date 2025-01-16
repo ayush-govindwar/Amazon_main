@@ -9,7 +9,7 @@ function renderordersummary(){
 
     let carthtml='';
     cart.forEach((cartitem)=>{
-        const productid= cartitem.productid;
+        const productid= cartitem.productid; 
 
         let matchingproduct;
         products.forEach((productins)=>{
